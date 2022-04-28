@@ -110,87 +110,59 @@ quadrante =
 puts "O ângulo #{angulo} fica no #{quadrante} quadrante."
 
 '''
-#7) Crie uma classe que modele uma bola e permita trocar e
-#consultar a cor da bola. A cor da bola é obrigatória
+#7)Escreva a uma classe Imc que implemente o método calcular que calcula o imc de cada paciente e imprime o resultado.
+#Nota: Formula do IMC: Peso / (Altura metros * Altura metros)
 '''
-class Bola
-  def initialize(cor)
-    @cor = cor
+class Imc
+  def self.calcular(peso, altura, nome)
+    imc = peso / (altura * altura)
+    if imc > 30
+      puts "#{nome} está obeso(a)"
+    elsif imc > 25
+      puts "#{nome} está acima do peso(a)"
+    elsif imc > 18.5 and imc < 24.99
+      puts "#{nome} está normal"
+    elsif imc < 18.5
+      puts "#{nome} está abaixo do peso"
+    else
+      puts "Algo está errado"
+    end
   end
-  
-  attr_accessor :cor
 end
 
+Imc.calcular(200.2, 1.75, "Mario")
+Imc.calcular(65.6, 1.65, "Roberta")
+Imc.calcular(79.7, 1.77, "Pedro")
+Imc.calcular(35.3, 1.60, "Ana")
 
-require_relative "bola"
-
-describe Bola do
-  it "possui uma cor" do
-    bola = Bola.new("verde")
-    bola.cor.should == "verde"
+'''
+#8) Escreva uma classe BicicletaEletrica que extende Bicicleta, sobrescrevendo
+#o método motorizada para retornar true, de forma que o código abaixo funcine
+#com a nova classe BicicletaEletrica. 
+'''
+class Bicicleta
+  def rodas
+    2
   end
-  
-  it "permite alterar sua cor" do
-    bola = Bola.new("verde")
-    bola.cor = "vermelha"
-    bola.cor.should == "vermelha"
+
+  def motorizada
+    false
   end
 end
-'''
-#8)  Crie uma classe que modele um quadrado e permita
-#alterar e consultar o tamanho dos lados e obter a área. O tamanho 
-#dos lados é obrigatório. O quadrado não deve aceitar lado zero nem negativo.
-'''
-class Quadrado
-  def initialize(lado)
-    validar lado
-    @lado = lado
-  end
-  
-  def area
-    lado * lado
-  end
-  
-  attr_reader :lado
-  
-  def lado=(novo_lado)
-    validar novo_lado
-    @lado = novo_lado
-  end
-  
-  private
-  
-  def validar(lado)
-    raise if lado <= 0
-  end
-end
-'''
-'''
- require_relative"quadrado"
 
-describe Quadrado do
-  before(:each) { @quadrado = Quadrado.new(5.0) }
-  
-  it "possui um tamanho dos lados" do
-    @quadrado.lado.should == 5.0
-  end
-  
-  it "permite alterar o tamanho dos lados" do
-    @quadrado.lado = 5.1
-    @quadrado.lado.should == 5.1
-  end
-  
-  it "calcula a sua área" do
-    @quadrado.area.should == 25
-  end
-  
-  it "não aceita lado negativo nem zero" do
-    expect { Quadrado.new(0) }.to raise_error
-    expect { @quadrado.lado = 0 }.to raise_error
-    expect { Quadrado.new(-0.1) }.to raise_error
-    expect { @quadrado.lado = -0.1 }.to raise_error
+class BicicletaEletrica < Bicicleta
+  def motorizada
+    true
   end
 end
+
+minha_bike_normal = Bicicleta.new
+minha_bike_normal.rodas 
+minha_bike_normal.motorizada 
+
+minha_bike = BicicletaEletrica.new
+minha_bike.rodas 
+minha_bike.motorizada 
 
 '''
 #9) Crie um script em Ruby que leia um número inteiro repetidas vezes. 
