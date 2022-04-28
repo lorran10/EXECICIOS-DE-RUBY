@@ -1,4 +1,7 @@
-#1) Crie um script em Ruby que leia três valores, 'a', 'b' e 'c' e diga se estes valores podem ser os lados de um triângulo. Para um triângulo ser formado, a soma de dois lados deve ser maior do que o terceiro lado: a + b > c e a + c > b e b + c > a.
+#1) Crie um script em Ruby que leia três valores, 'a', 'b' e 'c' e diga se estesvalores 
+#podem ser os lados de um triângulo. Para um triângulo ser formado,
+#a soma de dois lados deve 
+#ser maior do que o terceiro lado: a + b > c e a + c > b e b + c > a.
 '''
 puts"Digite um valor para A:"
 A = gets.chomp.to_i
@@ -13,7 +16,11 @@ else
   puts "Não e um triangulo"
 end
 '''
-#2) Modifique a questão anterior para contemplar o seguinte: quando os lados do triângulo forem válidos, o algoritmo deve informar qual é o tipo de triângulo formado pelos lados. O triângulo equilátero é formado quando os três lados são iguais. O triângulo isósceles é formado quando dois lados quaisquer são iguais, e o triângulo escaleno é formado quando os três lados são diferentes entre si.
+#2) Modifique a questão anterior para contemplar o seguinte: quando os lados do
+#triângulo forem válidos, o algoritmo deve informar qual é o tipo de triângulo 
+#formado pelos lados. O triângulo equilátero é formado quando os três lados são iguais.
+#O triângulo isósceles é formado quando dois lados quaisquer são iguais, e o triângulo escaleno
+ # é formado quando os três lados são diferentes entre si.
 '''
 puts"Digite um valor para A:"
 A = gets.chomp.to_i
@@ -30,7 +37,9 @@ else
   puts "Triângulo escaleno"
 end
 '''
-  #3)Crie um script em Ruby que permita ao usuário digitar um ano. Em seguida, o script deve informar se o ano (informado pelo usuário) é ou não bissexto. Dica: um ano é bissexto se ele for divisível por 400, ou se ele for divisível por 4 e não por 100.  
+  #3)Crie um script em Ruby que permita ao usuário digitar um ano. Em seguida, 
+#o script deve informar se o ano (informado pelo usuário) é ou não bissexto. 
+#Dica: um ano é bissexto se ele for divisível por 400, ou se ele for divisível por 4 e não por 100.  
 '''
 puts "DIGITE UM ANO QUALQUER"
 ano  = gets.chomp.to_i
@@ -41,7 +50,8 @@ else
   puts"Não e bissexto"
 end
 '''
-#4)  "Um elefante incomoda muita gente..." Escreva um programa que imprima a letra para o clássico das viagens de carro, com um limite de 100 elefantes.
+#4)  "Um elefante incomoda muita gente..." Escreva um programa que imprima a letra
+#para o clássico das viagens de carro, com um limite de 100 elefantes.
 '''
    comando = 1.0
 comando = comando.to_i
@@ -58,7 +68,12 @@ puts '' + comando.to_s + " elefantes encomodam muito a gente"
 end
 end
 '''
-#5) Escreva um programa Velha Surda. O que quer que você diga à velha (o que quer que você digite), ela tem que responder com QUE?! FALA MAIS ALTO!, a não ser que você grite (digite tudo em maiúsculas). Se você gritar, ela pode lhe ouvir (ou ao menos pensa que pode), e sempre responde NÃO, NÃO DESDE 1938! Para fazer seu programa ser realmente verossímil, faça a velha gritar um número diferente a cada vez; talvez qualquer ano aleatório entre 1930 e 1950
+#5) Escreva um programa Velha Surda. O que quer que você diga à velha 
+#(o que quer que você digite), ela tem que responder com QUE?! FALA MAIS ALTO!, 
+#a não ser que você grite (digite tudo em maiúsculas). Se você gritar, 
+#ela pode lhe ouvir (ou ao menos pensa que pode), e sempre responde
+#NÃO, NÃO DESDE 1938! Para fazer seu programa ser realmente verossímil,
+#faça a velha gritar um número diferente a cada vez; talvez qualquer ano aleatório entre 1930 e 1950
 '''
 puts "Olá meu filho"
 
@@ -75,7 +90,8 @@ if resposta == resposta.upcase
 	puts "NÃO, NÃO DESDE #{ano}"
 end
 '''
-#6) Escreva um programa que leia um número inteiro que corresponde a um ângulo e informe em qual quadrante este ângulo se encontra.
+#6) Escreva um programa que leia um número inteiro que corresponde 
+#a um ângulo e informe em qual quadrante este ângulo se encontra.
 '''
 print "Digite um ângulo: "
 angulo = gets.to_i % 360
@@ -90,7 +106,8 @@ quadrante =
 puts "O ângulo #{angulo} fica no #{quadrante} quadrante."
 
 '''
-#7) Crie uma classe que modele uma bola e permita trocar e consultar a cor da bola. A cor da bola é obrigatória
+#7) Crie uma classe que modele uma bola e permita trocar e
+#consultar a cor da bola. A cor da bola é obrigatória
 '''
 class Bola
   def initialize(cor)
@@ -116,7 +133,9 @@ describe Bola do
   end
 end
 '''
-#8)  Crie uma classe que modele um quadrado e permita alterar e consultar o tamanho dos lados e obter a área. O tamanho dos lados é obrigatório. O quadrado não deve aceitar lado zero nem negativo.
+#8)  Crie uma classe que modele um quadrado e permita
+#alterar e consultar o tamanho dos lados e obter a área. O tamanho 
+#dos lados é obrigatório. O quadrado não deve aceitar lado zero nem negativo.
 '''
 class Quadrado
   def initialize(lado)
@@ -170,7 +189,8 @@ describe Quadrado do
 end
 
 '''
-#9) Crie um script em Ruby que leia um número inteiro repetidas vezes. A repetição deve terminar quando o usuário digitar um número múltiplo de 5.
+#9) Crie um script em Ruby que leia um número inteiro repetidas vezes. 
+#A repetição deve terminar quando o usuário digitar um número múltiplo de 5.
 '''
     condicao = true
 while condicao
@@ -182,7 +202,10 @@ while condicao
 end
 puts "#{numero} é múltiplo de 5!"
 '''
-#10) Crie um script em Ruby que permita que o usuário digite uma nota de 0 a 100 (número inteiro) e calcule o conceito relativo à nota. Se a nota for entre 0 e 20, o conceito é "E"; entre 21 e 40, conceito "D"; entre 41 e 60, conceito "C"; entre 61 e 80, conceito "B"; entre 81 e 100, conceito "A".
+#10) Crie um script em Ruby que permita que o usuário digite uma nota de 
+#0 a 100 (número inteiro) e calcule o conceito relativo à nota. 
+#Se a nota for entre 0 e 20, o conceito é "E"; entre 21 e 40, conceito "D"; 
+  #entre 41 e 60, conceito "C"; entre 61 e 80, conceito "B"; entre 81 e 100, conceito "A".
 
 '''
 puts "Digite uma nota de 0 a 100:"
@@ -212,7 +235,9 @@ end
 
 
 '''
-#11)Brincadeira do ímpar ou par: escreva um programa que leia dois nomes e dois valores inteiros, que correspondem ao que cada um colocou, e informe quem ganhou o “ímpar ou par”.
+#11)Brincadeira do ímpar ou par: escreva um programa que leia dois 
+#nomes e dois valores inteiros, que correspondem ao 
+#que cada um colocou, e informe quem ganhou o “ímpar ou par”.
 '''
 print "Digite os nome jogador par: "
 jogador_par = gets.chomp
@@ -232,7 +257,9 @@ vencedor = if resultado=="Par" then jogador_par else jogador_impar end
 puts "#{resultado}, o vencedor foi #{vencedor}."
 '''
 
-#12) Escreva um programa que leia dois nomes e informe se os mesmos são iguais. Além de informar se os nomes são iguais ele deve informar se há diferenças na digitação de letras maiúsculas/ minúsculas.
+#12) Escreva um programa que leia dois nomes e informe se os mesmos 
+#são iguais. Além de informar se os nomes são iguais ele deve 
+#informar se há diferenças na digitação de letras maiúsculas/ minúsculas.
 '''
 puts "Digite dois nomes"
 nome1 = gets.chomp
