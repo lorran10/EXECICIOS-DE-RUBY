@@ -96,10 +96,14 @@ end
 print "Digite um ângulo: "
 angulo = gets.to_i % 360
 quadrante = 
-  if    angulo <  90 then "primeiro" 
-  elsif angulo < 180 then "segundo"
-  elsif angulo < 270 then "terceiro"
-  else  "quarto" 
+  if    angulo <  90 then 
+    puts "primeiro" 
+  elsif angulo < 180 then 
+    puts"segundo"
+  elsif angulo < 270 then 
+    puts"terceiro"
+  else  
+    puts "quarto" 
   
   end
 
