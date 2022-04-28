@@ -136,34 +136,42 @@ Imc.calcular(79.7, 1.77, "Pedro")
 Imc.calcular(35.3, 1.60, "Ana")
 
 '''
-#8) Escreva uma classe BicicletaEletrica que extende Bicicleta, sobrescrevendo
-#o método motorizada para retornar true, de forma que o código abaixo funcine
-#com a nova classe BicicletaEletrica. 
+#8) Crie uma classe Produto com atributos nome e preco. 
+#Crie também uma classe Carrinho com atributo produto. 
+#A classe carrinho deve implementar um método total e calcular quanto custa o total baseado nos produtos que foi adicionado.
 '''
-class Bicicleta
-  def rodas
-    2
-  end
+class Produto
+  attr_reader :nome, :preco
 
-  def motorizada
-    false
-  end
-end
-
-class BicicletaEletrica < Bicicleta
-  def motorizada
-    true
+  def initialize(nome, preco)
+    @nome = nome
+    @preco = preco
   end
 end
 
-minha_bike_normal = Bicicleta.new
-minha_bike_normal.rodas 
-minha_bike_normal.motorizada 
+class Carrinho
+  attr_accessor :produtos
 
-minha_bike = BicicletaEletrica.new
-minha_bike.rodas 
-minha_bike.motorizada 
+  def initialize
+    @produtos = []
+  end
 
+  def total
+    total = 0
+    produtos.each do |produto|
+      total += produto.preco
+    end
+    total
+  end
+end
+
+carrinho_compras = Carrinho.new
+carrinho_compras.produtos << Produto.new("leite", 3)
+carrinho_compras.produtos << Produto.new("nescau", 5)
+carrinho_compras.produtos << Produto.new("pão", 6)
+carrinho_compras.produtos << Produto.new("queijo", 8)
+
+carrinho_compras.total 
 '''
 #9) Crie um script em Ruby que leia um número inteiro repetidas vezes. 
 #A repetição deve terminar quando o usuário digitar um número múltiplo de 5.
